@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hasil Pencarian - JelajahWisata</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    window.onload = () => {
+      const params = new URLSearchParams(location.search);
+      const cari = (params.get("cari") || "").toLowerCase().trim();
+      const hasilEl = document.getElementById("hasil");
+      const grid = document.querySelector(".grid");
+      const cards = grid.querySelectorAll(".card");
+      let ditemukan = false;
+
+      if (cari) {
+        hasilEl.innerText = `Hasil pencarian untuk "${cari}"`;
+
+        cards.forEach(card => {
+          const text = card.innerText.toLowerCase();
+          if (text.includes(cari)) {
+            card.style.display = "flex";
+            ditemukan = true;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        if (!ditemukan) {
+          grid.innerHTML = `<p style="text-align:center;color:#9aa6b2;">Hasil tidak ditemukan.</p>`;
+        }
+      } else {
+        hasilEl.innerText = "Tidak ada kata kunci pencarian.";
+      }
+    };
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Jelajah Wisata</h1>
+      <nav>
+        <a href="index.html">Beranda</a>
+        <a href="destinasi.html">Destinasi</a>
+        <a href="kontak.html">Kontak</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2 id="hasil"></h2>
+      <p>Silakan pilih destinasi yang sesuai dari daftar di bawah ini.</p>
+    </section>
+
+    <section class="grid">
+      <a href="ujunggenteng.html" class="card" style="background-image:url('ujung genteng.jpg')">
+        <div class="content"><b>Pantai Ujung Genteng</b><br><span>Pantai</span></div>
+      </a>
+      <a href="gedepangrango.html" class="card" style="background-image:url('gunung gede.JPG')">
+        <div class="content"><b>Gunung Gede Pangrango</b><br><span>Gunung</span></div>
+      </a>
+      <a href="cimarinjung.html" class="card" style="background-image:url('curug.jpeg')">
+        <div class="content"><b>Curug Cimarinjung</b><br><span>Air Terjun</span></div>
+      </a>
+    </section>
+  </div>
+</body>
+</html>

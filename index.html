@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>JelajahWisata - Sukabumi</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function cari() {
+      const q = document.getElementById("search").value.trim().toLowerCase();
+      if (q) window.location.href = "hasil.html?cari=" + encodeURIComponent(q);
+    }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Jelajah Wisata</h1>
+      <nav>
+        <a href="index.html">Beranda</a>
+        <a href="destinasi.html">Destinasi</a>
+        <a href="kontak.html">Kontak</a>
+        <input type="text" id="search" placeholder="Cari..." onkeydown="if(event.key==='Enter') cari()">
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2>Temukan tempat wisata di sekitar kamu</h2>
+      <p>Jelajahi destinasi populer dengan foto dan informasi singkat.</p>
+    </section>
+
+    <section class="grid">
+      <a href="ujunggenteng.html" class="card" style="background-image:url('ujung genteng.jpg')">
+        <div class="content"><b>Pantai Ujung Genteng</b><br><span>Sukabumi • Pantai</span></div>
+      </a>
+      <a href="gedepangrango.html" class="card" style="background-image:url('gunung gede.JPG')">
+        <div class="content"><b>Gunung Gede Pangrango</b><br><span>Sukabumi • Gunung</span></div>
+      </a>
+      <a href="cimarinjung.html" class="card" style="background-image:url('curug.jpeg')">
+        <div class="content"><b>Curug Cimarinjung</b><br><span>Sukabumi • Air Terjun</span></div>
+      </a>
+    </section>
+  </div>
+</body>
+</html>

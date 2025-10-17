@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: linear-gradient(180deg,#071021,#071827 60%);
+  color: #e6f0f2;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrap {
+  max-width: 900px;
+  width: 100%;
+}
+
+section {
+  background: rgba(255,255,255,.05);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #2dd4bf;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: #1a2235;
+  color: #e6f0f2;
+}
+
+button {
+  background: #2dd4bf;
+  color: #071021;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #20bda8;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #333;
+  text-align: left;
+}
+
+th {
+  background: #2dd4bf;
+  color: #071021;
+}
+
+.sukses { color: #16a34a; font-weight: bold; }
+.gagal { color: #dc2626; font-weight: bold; }
+.menunggu { color: #facc15; font-weight: bold; }
